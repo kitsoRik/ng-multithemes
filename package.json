@@ -1,6 +1,6 @@
 {
 	"name": "ng-multithemes",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"description": "Multithemeas for angular",
 	"main": "index.js",
 	"bin": {

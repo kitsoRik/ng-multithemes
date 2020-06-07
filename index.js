@@ -6,7 +6,7 @@ if (args._.indexOf("generate") !== -1) {
 		require("./src/generate-theme");
 	}
 
-	if (args._.indexOf("bundle") !== -1) {
+	if (args._.indexOf("angularjson") !== -1) {
 		require("./src/generate-angularjson");
 	}
 } else {
