@@ -1,4 +1,4 @@
-const { readdirSync, writeFileSync } = require("fs");
+const { readdirSync, writeFileSync, lstatSync } = require("fs");
 const { join, relative } = require("path");
 
 const args = require("yargs").argv;
@@ -29,8 +29,10 @@ function generate(inputPath, outputPath, themeName) {
 		themeName,
 		outputPath
 	);
-
-	writeFileSync(outputPath, result);
+	const out = lstatSync(outputPath).isDirectory()
+		? join(outputPath, themeName + ".scss")
+		: outputPath;
+	writeFileSync(out, result);
 }
 
 function findFileAndFolderByThemeName(path, themeName, outputPath) {
@@ -61,7 +63,6 @@ function findFileAndFolderByThemeNameRecursive(path, themeName) {
 						join(path, dir.name)
 					),
 				];
-				console.log(itemPath);
 			} else {
 				paths = [
 					...paths,

@@ -1,8 +1,11 @@
 {
 	"name": "ng-multithemes",
-	"version": "0.0.1",
+	"version": "0.0.10",
 	"description": "Multithemeas for angular",
 	"main": "index.js",
+	"bin": {
+		"ng-multithemes": "bin/ng-multithemes"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
