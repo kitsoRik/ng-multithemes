@@ -40,7 +40,7 @@ function findFileAndFolderByThemeName(path, themeName, outputPath) {
 
 	return paths
 		.map((path) => {
-			const relativePath = relative(join(outputPath, ".."), path);
+			const relativePath = relative(outputPath, path);
 
 			if (relativePath === "" || relativePath === themeName + ".scss")
 				return "";
